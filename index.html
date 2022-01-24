@@ -2,64 +2,24 @@
 <html>
     <head>
         <title>Fetch JSON</title>
-        <h1>Task 1 - Fetch JSON</h1>
-        <style>
-            table, th, td{
-                border: 1px solid black;
-            }
-        </style>
+        <h1><center>Task 1 - Fetch JSON</center></h1>
+        <script type="text/javascript" src="./index.js"></script>
+        <link rel="stylesheet" href="./style.css">
+        
 
     </head>
     <body>
-        <table id="myTable">
-            <tr>
-                <th>title</th>
-                <th>price</th>
-                <th>popularity</th>
-            </tr>
-            
-        </table>
+        <center>
+            <table id="myTable">
+                <tr>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>popularity</th>
+                </tr>
+                
+            </table>
+        </center>
         
         
-
-        <script>
-            fetch("https://s3.amazonaws.com/open-to-cors/assignment.json").then(function(res) {
-                return res.json()
-            }).then(function(obj) {
-                var n = 1;
-                var objArr = [];
-
-                Object.keys(obj["products"]).forEach(key => objArr.push({
-                    title: obj["products"][key]["title"],
-                    price: obj["products"][key]["price"],
-                    popularity: obj["products"][key]["popularity"]
-
-                }));
-
-                objArr.sort((a, b) => {
-                    return b.popularity - a.popularity;
-                });
-
-                //console.log(objArr);
-
-                
-                for(var val of objArr){
-                    var table = document.getElementById("myTable");
-                    var row = table.insertRow(n++);
-                    var cell1 = row.insertCell(0);
-                    var cell2 = row.insertCell(1);
-                    var cell3 = row.insertCell(2);
-                    cell1.innerHTML = val["title"];
-                    cell2.innerHTML = val["price"];
-                    cell3.innerHTML = val["popularity"];
-
-                }
-                
-                
-                
-            }).catch(function(err) {
-                console.log(err)
-            });
-        </script>
     </body>
 </html>
