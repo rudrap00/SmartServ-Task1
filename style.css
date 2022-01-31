@@ -1,4 +1,10 @@
-table, th, td{
-    border: 2px solid black;
+th, td{
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
 
+}
+
+table{
+    border-left: 2px solid black;
+    border-top: 2px solid black;
 }

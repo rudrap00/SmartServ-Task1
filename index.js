@@ -12,7 +12,7 @@ fetch(url)
       objArr.push({
         title: obj["products"][key]["title"],
         price: obj["products"][key]["price"],
-        popularity: obj["products"][key]["popularity"],
+        popularity: obj["products"][key]["popularity"]
       })
     );
 
